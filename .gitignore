@@ -1,0 +1,12 @@
+# Monorepo: notes, scripts, workspace and all labs (added via git subtree).
+# lab0-devtools is upstream tooling; cpu is the separate team coursework repo.
+lab0-devtools/
+cpu/*
+!cpu/.gitkeep
+
+# Build artefacts
+obj_dir/
+*.vcd
+*.fst
+
+.DS_Store

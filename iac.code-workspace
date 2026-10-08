@@ -1,0 +1,45 @@
+{
+    // Open with: code ~/Uni/IAC/iac.code-workspace
+    // Based on lab0-devtools/autumn/workspace/iac-autumn.code-workspace.
+    "folders": [
+        { "name": "home", "path": "." },
+        { "name": "lab0 toolchain", "path": "lab0-devtools/autumn/workspace/toolchain" },
+        { "name": "labs", "path": "labs" },
+        { "name": "cpu", "path": "cpu" }
+    ],
+    "settings": {
+        "editor.formatOnSave": true,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+
+        // SystemVerilog linting via Verilator (course settings)
+        "systemverilog.launchConfigurationVerilator": "verilator -sv --lint-only --language 1800-2017 --Wall -Irtl",
+        "systemverilog.compileOnOpen": true,
+        "systemverilog.compileOnSave": true,
+        "systemverilog.enableIncrementalIndexing": false,
+
+        // C++ testbench IntelliSense on macOS (for folders without their own c_cpp_properties.json)
+        "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+        "C_Cpp.default.cppStandard": "c++17",
+        "C_Cpp.default.intelliSenseMode": "macos-clang-arm64",
+        "C_Cpp.default.includePath": [
+            "${workspaceFolder}/**",
+            "/usr/local/share/verilator/include",
+            "/usr/local/share/verilator/include/vltstd"
+        ],
+
+        // Keep build output out of search and the file tree
+        "files.exclude": { "**/obj_dir": true, "**/.DS_Store": true },
+        "search.exclude": { "**/obj_dir": true, "**/*.vcd": true }
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.cpptools-extension-pack",
+            "eirikpre.systemverilog",
+            "eamodio.gitlens",
+            "ms-vsliveshare.vsliveshare",
+            "ms-vscode.makefile-tools",
+            "surfer-project.surfer"
+        ]
+    }
+}
